@@ -1,0 +1,83 @@
+---
+import { motion } from 'framer-motion'
+---
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy | Future & Fortune</title>
+    <link rel="stylesheet" href="/styles/global.css">
+  </head>
+  <body class="bg-dark-950 text-white antialiased">
+    <div class="container py-16">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <h1 class="heading-2 mb-8">Privacy Policy</h1>
+        <div class="prose prose-invert max-w-none">
+          <p>Last updated: August 21, 2025</p>
+          <p>
+            Future & Fortune ("us", "we", or "our") operates the https://futureandfortune.com website (the "Service").
+            This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data.
+          </p>
+          <h2 class="heading-3 mt-8">Information Collection and Use</h2>
+          <p>
+            We collect several different types of information for various purposes to provide and improve our Service to you.
+          </p>
+          <h3 class="heading-4 mt-6">Types of Data Collected</h3>
+          <h4>Personal Data</h4>
+          <p>
+            While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you ("Personal Data"). Personally identifiable information may include, but is not limited to:
+          </p>
+          <ul>
+            <li>Email address</li>
+            <li>First name and last name</li>
+            <li>Phone number</li>
+            <li>Company name</li>
+            <li>Cookies and Usage Data</li>
+          </ul>
+          <h2 class="heading-3 mt-8">Use of Data</h2>
+          <p>
+            Future & Fortune uses the collected data for various purposes:
+          </p>
+          <ul>
+            <li>To provide and maintain the Service</li>
+            <li>To notify you about changes to our Service</li>
+            <li>To provide customer care and support</li>
+            <li>To provide analysis or valuable information so that we can improve the Service</li>
+            <li>To monitor the usage of the Service</li>
+            <li>To detect, prevent and address technical issues</li>
+          </ul>
+          <h2 class="heading-3 mt-8">Contact Us</h2>
+          <p>
+            If you have any questions about this Privacy Policy, please contact us:
+          </p>
+          <ul>
+            <li>By email: hr@futureandfortune.in</li>
+          </ul>
+        </div>
+        <div class="mt-12">
+          <a href="/" class="btn-secondary">
+            Back to home
+          </a>
+        </div>
+      </motion.div>
+    </div>
+  </body>
+</html>
+<style>
+  .prose {
+    color: #d1d5db;
+  }
+  .prose h1, .prose h2, .prose h3, .prose h4 {
+    color: #ffffff;
+  }
+  .prose a {
+    color: #38bdf8;
+  }
+  .prose ul > li::before {
+    background-color: #38bdf8;
+  }
+</style>

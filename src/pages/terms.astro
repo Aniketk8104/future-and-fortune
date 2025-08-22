@@ -1,0 +1,66 @@
+---
+import { motion } from 'framer-motion'
+---
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms of Service | Future & Fortune</title>
+    <link rel="stylesheet" href="/styles/global.css">
+  </head>
+  <body class="bg-dark-950 text-white antialiased">
+    <div class="container py-16">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <h1 class="heading-2 mb-8">Terms of Service</h1>
+        <div class="prose prose-invert max-w-none">
+          <p>Last updated: August 21, 2025</p>
+          <p>
+            Please read these terms and conditions carefully before using Our Service.
+          </p>
+          <h2 class="heading-3 mt-8">Interpretation and Definitions</h2>
+          <p>
+            The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.
+          </p>
+          <h2 class="heading-3 mt-8">Acknowledgment</h2>
+          <p>
+            These are the Terms and Conditions governing the use of this Service and the agreement that operates between You and the Company. These Terms and Conditions set out the rights and obligations of all users regarding the use of the Service.
+          </p>
+          <h2 class="heading-3 mt-8">Limitation of Liability</h2>
+          <p>
+            To the maximum extent permitted by applicable law, in no event shall the Company or its suppliers be liable for any special, incidental, indirect, or consequential damages whatsoever (including, but not limited to, damages for loss of profits, loss of data or other information, for business interruption, for personal injury, loss of privacy arising out of or in any way related to the use of or inability to use the Service, third-party software and/or third-party hardware used with the Service, or otherwise in connection with any provision of this Terms), even if the Company or any supplier has been advised of the possibility of such damages and even if the remedy fails of its essential purpose.
+          </p>
+          <h2 class="heading-3 mt-8">Contact Us</h2>
+          <p>
+            If you have any questions about these Terms and Conditions, You can contact us:
+          </p>
+          <ul>
+            <li>By email: hr@futureandfortune.in</li>
+          </ul>
+        </div>
+        <div class="mt-12">
+          <a href="/" class="btn-secondary">
+            Back to home
+          </a>
+        </div>
+      </motion.div>
+    </div>
+  </body>
+</html>
+<style>
+  .prose {
+    color: #d1d5db;
+  }
+  .prose h1, .prose h2, .prose h3, .prose h4 {
+    color: #ffffff;
+  }
+  .prose a {
+    color: #38bdf8;
+  }
+  .prose ul > li::before {
+    background-color: #38bdf8;
+  }
+</style>

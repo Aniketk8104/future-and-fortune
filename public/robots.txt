@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://futureandfortune.in/sitemap-index.xml
+Sitemap: https://futureandfortune.in/sitemap.xml
+
+# Optional crawl delay for bots
+Crawl-delay: 1
+
+# No sensitive paths to block
+# Disallow: /admin/
+# Disallow: /.env

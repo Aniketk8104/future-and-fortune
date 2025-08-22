@@ -1,0 +1,20 @@
+{
+  "name": "Future & Fortune - HR & Recruitment Excellence",
+  "short_name": "Future & Fortune",
+  "description": "Hire smarter. Build compliant HR. Elevate culture. Expert recruitment, HR management, and corporate gifting services.",
+  "start_url": "/",
+  "display": "minimal-ui",
+  "background_color": "#020617",
+  "theme_color": "#0ea5e9",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity", "lifestyle"],
+  "lang": "en",
+  "orientation": "portrait-primary"
+}
