@@ -129,9 +129,10 @@ export default function Testimonials() {
 										transition={{ duration: 0.6 }}
 										whileHover={{ y: -6, boxShadow: '0 16px 32px rgba(168,85,247,0.12)' }}
 										whileTap={{ scale: 0.98 }}
-										className="glass-card p-8 card-hover will-change-transform"
+										className="glass-card p-8 card-hover will-change-transform group relative"
 									>
-										<div className="flex justify-between items-start mb-6">
+										<span className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-r from-primary-500/12 via-secondary-500/12 to-accent-500/12 opacity-0 group-hover:opacity-100 transition" />
+										<div className="flex justify-between items-start mb-6 relative z-10">
 											<Quote className="w-8 h-8 text-primary-400 opacity-50" />
 											<div className="flex gap-1">
 												{Array.from({ length: testimonial.rating }).map((_, i) => (
@@ -139,10 +140,10 @@ export default function Testimonials() {
 												))}
 											</div>
 										</div>
-										<blockquote className="body-base text-gray-300 mb-6 leading-relaxed">
+										<blockquote className="body-base text-gray-300 mb-6 leading-relaxed relative z-10">
 											"{testimonial.content}"
 										</blockquote>
-										<div className="flex items-center gap-4">
+										<div className="flex items-center gap-4 relative z-10">
 											<img src={testimonial.avatar} alt={testimonial.name} className="w-12 h-12 rounded-full object-cover ring-2 ring-primary-500/20" />
 											<div>
 												<div className="font-semibold text-white">{testimonial.name}</div>
@@ -167,9 +168,10 @@ export default function Testimonials() {
 							transition={{ duration: 0.6, delay: index * 0.1 }}
 							whileHover={{ y: -6, boxShadow: '0 16px 32px rgba(168,85,247,0.12)' }}
 							whileTap={{ scale: 0.98 }}
-							className="glass-card p-8 card-hover will-change-transform"
+							className="glass-card p-8 card-hover will-change-transform group relative"
 						>
-							<div className="flex justify-between items-start mb-6">
+							<span className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-r from-primary-500/12 via-secondary-500/12 to-accent-500/12 opacity-0 group-hover:opacity-100 transition" />
+							<div className="flex justify-between items-start mb-6 relative z-10">
 								<Quote className="w-8 h-8 text-primary-400 opacity-50" />
 								<div className="flex gap-1">
 									{Array.from({ length: testimonial.rating }).map((_, i) => (
@@ -177,10 +179,10 @@ export default function Testimonials() {
 									))}
 								</div>
 							</div>
-							<blockquote className="body-base text-gray-300 mb-6 leading-relaxed">
+							<blockquote className="body-base text-gray-300 mb-6 leading-relaxed relative z-10">
 								"{testimonial.content}"
 							</blockquote>
-							<div className="flex items-center gap-4">
+							<div className="flex items-center gap-4 relative z-10">
 								<img src={testimonial.avatar} alt={testimonial.name} className="w-12 h-12 rounded-full object-cover ring-2 ring-primary-500/20" />
 								<div>
 									<div className="font-semibold text-white">{testimonial.name}</div>

@@ -50,7 +50,7 @@ export default function ContactForm() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-2 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 sm:p-8 shadow-2xl"
+            className="lg:col-span-2 glass-card p-6 sm:p-8"
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <input type="hidden" name="form-name" value="contact" />
@@ -152,7 +152,7 @@ export default function ContactForm() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="space-y-6"
           >
-            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 shadow-2xl">
+            <div className="glass-card p-6 shadow-2xl">
               <h3 className="font-semibold text-white mb-4">Contact</h3>
               <div className="space-y-4 text-gray-300">
                 <div className="flex items-center gap-3"><Mail className="w-4 h-4 text-primary-300" /><a href="mailto:hr@futureandfortune.in" className="hover:text-primary-300">hr@futureandfortune.in</a></div>

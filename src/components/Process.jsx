@@ -120,14 +120,15 @@ export default function Process() {
 										whileInView={{ opacity: 1, y: 0 }}
 										viewport={{ once: true }}
 										transition={{ duration: 0.5 }}
-										className="text-center relative glass-card p-6 mx-2"
+										className="text-center relative glass-card p-6 mx-2 group"
 									>
+										<span className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-r from-primary-500/12 via-secondary-500/12 to-accent-500/12 opacity-0 group-hover:opacity-100 transition" />
 										<div className="relative inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full text-white font-bold text-lg mb-6 mx-auto">
 											<div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full animate-pulse opacity-20" />
 											<span className="relative z-10">{step.number}</span>
 										</div>
-										<h3 className="heading-4 mb-4 text-white">{step.title}</h3>
-										<p className="body-base text-gray-300">{step.description}</p>
+										<h3 className="heading-4 mb-4 text-white relative z-10">{step.title}</h3>
+										<p className="body-base text-gray-300 relative z-10">{step.description}</p>
 									</motion.div>
 								</div>
 							))}
@@ -149,18 +150,19 @@ export default function Process() {
 									whileInView={{ opacity: 1, y: 0 }}
 									viewport={{ once: true }}
 									transition={{ duration: 0.6, delay: index * 0.2 }}
-									className="text-center relative glass-card p-6"
+									className="text-center relative glass-card p-6 group"
 								>
+									<span className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-r from-primary-500/12 via-secondary-500/12 to-accent-500/12 opacity-0 group-hover:opacity-100 transition" />
 									{/* Step number circle */}
 									<div className="relative inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full text-white font-bold text-lg mb-6 mx-auto">
 										<div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full animate-pulse opacity-20" />
 										<span className="relative z-10">{step.number}</span>
 									</div>
 
-									<h3 className="heading-4 mb-4 text-white">
+									<h3 className="heading-4 mb-4 text-white relative z-10">
 										{step.title}
 									</h3>
-									<p className="body-base text-gray-300">
+									<p className="body-base text-gray-300 relative z-10">
 										{step.description}
 									</p>
 								</motion.div>

@@ -78,7 +78,7 @@ export default function Stats() {
 							whileInView={{ opacity: 1, y: 0 }}
 							viewport={{ once: true }}
 							transition={{ duration: 0.5, delay: index * 0.08 }}
-							className="relative rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-5 sm:p-6 shadow-2xl"
+							className="glass-card p-5 sm:p-6"
 						>
 							<div className="text-3xl lg:text-4xl font-bold mb-2">
 								<Counter number={stat.number} suffix={stat.suffix} />

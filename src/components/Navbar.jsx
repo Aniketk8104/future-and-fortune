@@ -120,10 +120,10 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 right-0 z-[100000] pointer-events-auto transition-all duration-300 ${
+      <nav className={`fixed top-0 left-0 right-0 z-[110000] pointer-events-auto transition-all duration-300 ${
         isScrolled ? 'glass-nav shadow-2xl' : 'bg-transparent'
       }`}>
-        <div className="container flex items-center justify-between py-4 relative z-[100001] pointer-events-auto">
+        <div className="container flex items-center justify-between py-4 relative z-[110001] pointer-events-auto">
           {/* Logo */}
           <motion.a
             href="#home"

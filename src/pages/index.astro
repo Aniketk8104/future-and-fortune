@@ -11,6 +11,7 @@ import FAQ from '../components/FAQ'
 import ContactForm from '../components/ContactForm'
 import Footer from '../components/Footer'
 import FloatingWhatsApp from '../components/FloatingWhatsApp'
+import FeatureCarousel from '../components/FeatureCarousel'
 
 const SITE = 'https://futureandfortune.in'
 const TITLE = 'Future & Fortune — HR & Recruitment Excellence'
@@ -108,6 +109,7 @@ const structuredData = {
     
     <main id="main">
       <Hero client:load />
+      <FeatureCarousel client:visible />
       <Services client:visible />
       <Stats client:visible />
       <Process client:visible />
