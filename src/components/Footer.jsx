@@ -2,8 +2,11 @@ import { motion } from 'framer-motion'
 import { Mail, Phone, Linkedin } from 'lucide-react'
 import Logo from './Logo'
 
-export default function Footer() {
+export default function Footer({ isHomeProp }) {
   const currentYear = new Date().getFullYear()
+  const isBrowser = typeof window !== 'undefined'
+  const isHome = isBrowser ? window.location.pathname === '/' : (isHomeProp ?? false)
+  const homeAnchor = (hash) => `/${hash?.replace(/^#/, '') ? '#' + hash.replace(/^#/, '') : ''}`
 
   // Smooth scroll with offset identical to navbar behavior
   const scrollWithOffset = (e, href) => {
@@ -26,30 +29,28 @@ export default function Footer() {
     {
       title: 'Services',
       links: [
-        { name: 'Recruitment', href: '#services' },
-        { name: 'HR Management', href: '#services' },
-        { name: 'HR Consultation', href: '#services' },
-        { name: 'HR Advisory', href: '#services' },
-        { name: 'Corporate Gifting', href: '#services' }
+        { name: 'Recruitment', href: isHome ? '#services' : '/#services' },
+        { name: 'HR Management', href: isHome ? '#services' : '/#services' },
+        { name: 'HR Consultation', href: isHome ? '#services' : '/#services' },
+        { name: 'HR Advisory', href: isHome ? '#services' : '/#services' },
+        { name: 'Corporate Gifting', href: isHome ? '#services' : '/#services' }
       ]
     },
     {
       title: 'Company',
       links: [
-        { name: 'About', href: '#why-us' },
-        { name: 'Process', href: '#process' },
-        { name: 'FAQ', href: '#faq' },
-        { name: 'Contact', href: '#contact' }
+        { name: 'About', href: isHome ? '#why-us' : '/#why-us' },
+        { name: 'Process', href: isHome ? '#process' : '/#process' },
+        { name: 'FAQ', href: isHome ? '#faq' : '/#faq' },
+        { name: 'Contact', href: isHome ? '#contact' : '/#contact' },
+        { name: 'Pune HR Services', href: '/pune/' },
+        { name: 'Mumbai HR Services', href: '/mumbai/' }
       ]
     }
   ]
 
-  const socialLinks = [
-    { name: 'LinkedIn', href: 'https://www.linkedin.com/company/future-fortune-solutions/', icon: Linkedin }
-  ]
-
   return (
-    <footer className="relative bg-dark-900/80 border-t border-white/10 mt-20 overflow-hidden">
+    <footer className="relative footer-surface bg-dark-900/80 border-t border-white/10 mt-20 overflow-hidden">
       {/* subtle glow */}
       <div className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[120%] h-48 bg-gradient-to-b from-primary-500/10 to-transparent blur-3xl" />
 
@@ -107,7 +108,7 @@ export default function Footer() {
               <ul className="grid grid-cols-1 gap-2">
                 {footerLinks[0].links.map((link) => (
                   <li key={link.name}>
-                    <a href={link.href} className="text-gray-400 hover:text-primary-400" onClick={(e) => scrollWithOffset(e, link.href)}>
+                    <a href={link.href} className="text-gray-400 hover:text-primary-400" onClick={(e) => { if (isHome && link.href.startsWith('#')) scrollWithOffset(e, link.href) }}>
                       {link.name}
                     </a>
                   </li>
@@ -126,7 +127,7 @@ export default function Footer() {
               <ul className="grid grid-cols-1 gap-2">
                 {footerLinks[1].links.map((link) => (
                   <li key={link.name}>
-                    <a href={link.href} className="text-gray-400 hover:text-primary-400" onClick={(e) => scrollWithOffset(e, link.href)}>
+                    <a href={link.href} className="text-gray-400 hover:text-primary-400" onClick={(e) => { if (isHome && link.href.startsWith('#')) scrollWithOffset(e, link.href) }}>
                       {link.name}
                     </a>
                   </li>

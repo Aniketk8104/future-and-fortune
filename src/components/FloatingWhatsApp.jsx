@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { MessageCircle } from 'lucide-react'
 
 export default function FloatingWhatsApp() {
-  const url = 'https://wa.me/919137714543?text=Hi%2C%20Future%20%26%20Fortune%20%E2%80%94%20I%27d%20like%20to%20talk%20about%20HR%20solutions.'
+  const url = 'https://wa.me/917506125291?text=Hi%2C%20Future%20%26%20Fortune%20%E2%80%94%20I%27d%20like%20to%20talk%20about%20HR%20solutions.'
   return (
     <motion.a
       href={url}

@@ -1,0 +1,106 @@
+---
+import '../../styles/global.css'
+import Navbar from '../../components/Navbar'
+import Footer from '../../components/Footer'
+import FloatingWhatsApp from '../../components/FloatingWhatsApp'
+
+const SITE = 'https://futureandfortune.in'
+const TITLE = 'HR Advisory, Recruitment & HR Consultancy in Mumbai — Future & Fortune'
+const DESC = 'Top-tier HR advisory, recruitment, and HR consultancy in Mumbai. Compliance-first HR operations, talent acquisition, and scalable people systems.'
+const OG_IMG = `${SITE}/og-image.jpg`
+const EMAIL = 'hr@futureandfortune.in'
+const KEYWORDS = 'HR advisory Mumbai, HR consultancy Mumbai, Recruitment agency Mumbai, HR outsourcing Mumbai, HR consultant in Mumbai, HR services Mumbai, talent acquisition Mumbai, payroll and compliance Mumbai, HR policy Mumbai'
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      'itemListElement': [
+        { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE },
+        { '@type': 'ListItem', 'position': 2, 'name': 'Mumbai HR Services', 'item': `${SITE}/mumbai/` }
+      ]
+    },
+    {
+      '@type': 'ProfessionalService',
+      '@id': `${SITE}/mumbai/#service`,
+      'name': 'Future & Fortune — Mumbai HR Advisory & Recruitment',
+      'url': `${SITE}/mumbai/`,
+      'areaServed': { '@type': 'City', 'name': 'Mumbai' },
+      'email': EMAIL,
+      'description': DESC,
+      'serviceType': ['HR Advisory', 'HR Consultancy', 'Recruitment', 'Corporate Gifting']
+    },
+    {
+      '@type': 'FAQPage',
+      'mainEntity': [
+        { '@type': 'Question', 'name': 'Do you provide HR advisory in Mumbai?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Yes. We support Mumbai-based companies with policy design, local compliance, audits, and ER frameworks.' } },
+        { '@type': 'Question', 'name': 'Do you hire for Mumbai roles?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Yes. We run full-cycle recruitment across tech and non-tech roles for Mumbai organizations.' } }
+      ]
+    }
+  ]
+}
+---
+
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{TITLE}</title>
+    <meta name="description" content={DESC} />
+    <meta name="keywords" content={KEYWORDS} />
+    <link rel="canonical" href={`${SITE}/mumbai/`} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={TITLE} />
+    <meta property="og:description" content={DESC} />
+    <meta property="og:url" content={`${SITE}/mumbai/`} />
+    <meta property="og:image" content={OG_IMG} />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  </head>
+  <body class="bg-dark-950 text-white antialiased">
+    <Navbar isHomeProp={false} client:load />
+
+    <main id="main" class="section-padding">
+      <section class="container">
+        <h1 class="heading-1 mb-4">HR Advisory, Recruitment & HR Consultancy in Mumbai</h1>
+        <p class="body-large text-gray-300 max-w-3xl mb-8">
+          Compliance-first, human-centered HR for Mumbai-based startups, SMBs and enterprises. From
+          recruitment to policy and audits, we build scalable people systems.
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+          <div class="glass-card p-6">
+            <h2 class="heading-4 mb-2">HR Advisory</h2>
+            <p class="text-gray-300">Policies, compliance, audits, ER, and governance tailored for Mumbai operations.</p>
+          </div>
+          <div class="glass-card p-6">
+            <h2 class="heading-4 mb-2">Recruitment</h2>
+            <p class="text-gray-300">Full-cycle hiring across tech and non-tech roles with calibrated scorecards.</p>
+          </div>
+          <div class="glass-card p-6">
+            <h2 class="heading-4 mb-2">HR Management</h2>
+            <p class="text-gray-300">Payroll coordination, attendance, performance, and SOPs that scale.</p>
+          </div>
+        </div>
+
+        <a id="mumbai-contact" href="/#contact" class="btn-primary">Contact us</a>
+      </section>
+    </main>
+
+    <Footer isHomeProp={false} client:visible />
+    <FloatingWhatsApp client:idle />
+
+    <script>
+      (function(){
+        const el = document.getElementById('mumbai-contact');
+        /** @type {HTMLAnchorElement|null} */
+        const a = el instanceof HTMLAnchorElement ? el : null;
+        if (!a) return;
+        try { a.href = new URL('/#contact', location.origin).toString(); } catch(_){}
+      })();
+    </script>
+  </body>
+</html>

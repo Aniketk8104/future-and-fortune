@@ -18,7 +18,7 @@ export default function Logo({ className = '' }) {
       className={`h-8 sm:h-9 w-auto object-contain ${className}`}
       loading="eager"
       decoding="async"
-      fetchpriority="high"
+      fetchPriority="high"
       width={152}
       height={32}
       onError={() => setFailed(true)}

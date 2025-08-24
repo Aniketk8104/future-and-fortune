@@ -14,10 +14,11 @@ import FloatingWhatsApp from '../components/FloatingWhatsApp'
 import FeatureCarousel from '../components/FeatureCarousel'
 
 const SITE = 'https://futureandfortune.in'
-const TITLE = 'Future & Fortune — HR & Recruitment Excellence'
-const DESC = 'Hire smarter. Build compliant HR. Elevate culture. Expert recruitment, HR management, and corporate gifting services designed for growth and retention.'
+const TITLE = 'Future & Fortune | HR Advisory, Recruitment & HR Consultancy in Pune & Mumbai'
+const DESC = 'Hire smarter. Build compliant HR. Elevate culture. HR advisory, recruitment and HR consultancy in Pune & Mumbai — designed for growth, compliance and retention.'
 const OG_IMG = `${SITE}/og-image.jpg`
 const EMAIL = 'hr@futureandfortune.in'
+const KEYWORDS = 'HR advisory Pune, HR advisory Mumbai, HR consultancy Pune, HR consultancy Mumbai, Recruitment agency Pune, Recruitment agency Mumbai, HR outsourcing Pune, HR outsourcing Mumbai, Corporate gifting Pune, Corporate gifting Mumbai, Pune HR services, Mumbai HR services, talent acquisition Pune, talent acquisition Mumbai, Future & Fortune HR'
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -30,26 +31,37 @@ const structuredData = {
       "logo": `${SITE}/favicon.svg`,
       "email": EMAIL,
       "description": DESC,
+      "keywords": KEYWORDS,
       "sameAs": [
         "https://www.linkedin.com/company/future-fortune-solutions/"
+      ],
+      "areaServed": [
+        { "@type": "City", "name": "Pune" },
+        { "@type": "City", "name": "Mumbai" },
+        "India",
+        "Worldwide"
+      ],
+      "serviceArea": [
+        { "@type": "City", "name": "Pune" },
+        { "@type": "City", "name": "Mumbai" }
       ],
       "contactPoint": [{
         "@type": "ContactPoint",
         "contactType": "sales",
         "email": EMAIL,
         "telephone": "+91 75061 25291",
-        "areaServed": "Worldwide",
+        "areaServed": ["Pune", "Mumbai", "India", "Worldwide"],
         "availableLanguage": ["English"]
       }],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "HR and Talent Services",
         "itemListElement": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Recruitment", "serviceType": "Talent Acquisition"} },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "HR Management", "serviceType": "HR Operations"} },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "HR Consultation", "serviceType": "HR Strategy"} },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "HR Advisory", "serviceType": "Compliance & Policy"} },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Corporate Gifting", "serviceType": "Employee Experience"} }
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Recruitment", "serviceType": "Talent Acquisition", "areaServed": ["Pune", "Mumbai"] } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "HR Management", "serviceType": "HR Operations", "areaServed": ["Pune", "Mumbai"] } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "HR Consultation", "serviceType": "HR Strategy", "areaServed": ["Pune", "Mumbai"] } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "HR Advisory", "serviceType": "Compliance & Policy", "areaServed": ["Pune", "Mumbai"] } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Corporate Gifting", "serviceType": "Employee Experience", "areaServed": ["Pune", "Mumbai"] } }
         ]
       }
     },
@@ -60,6 +72,15 @@ const structuredData = {
         { "@type": "Question", "name": "How quickly can you fill open positions?", "acceptedAnswer": { "@type": "Answer", "text": "Our average time-to-hire is 15 days, significantly faster than industry standards." } },
         { "@type": "Question", "name": "Do you handle HR compliance globally?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we advise on compliant policies, documentation, and audits tailored to your region." } }
       ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${SITE}/#webpage`,
+      "url": SITE,
+      "name": TITLE,
+      "inLanguage": "en",
+      "keywords": KEYWORDS,
+      "description": DESC
     }
   ]
 }
@@ -71,6 +92,7 @@ const structuredData = {
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>{TITLE}</title>
     <meta name="description" content={DESC} />
+    <meta name="keywords" content={KEYWORDS} />
     <link rel="canonical" href={SITE} />
     <meta name="theme-color" content="#0ea5e9" />
     <link rel="manifest" href="/manifest.webmanifest" />
@@ -79,6 +101,7 @@ const structuredData = {
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -105,10 +128,10 @@ const structuredData = {
       Skip to content
     </a>
 
-    <Navbar client:load />
+    <Navbar isHomeProp={true} client:load />
     
     <main id="main">
-      <Hero client:load />
+      <Hero client:visible />
       <FeatureCarousel client:visible />
       <Services client:visible />
       <Stats client:visible />
@@ -119,7 +142,7 @@ const structuredData = {
       <ContactForm client:visible />
     </main>
     
-    <Footer client:visible />
-    <FloatingWhatsApp client:load />
+    <Footer isHomeProp={true} client:visible />
+    <FloatingWhatsApp client:idle />
   </body>
 </html>

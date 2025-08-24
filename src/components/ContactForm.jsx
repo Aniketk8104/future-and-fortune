@@ -126,7 +126,7 @@ export default function ContactForm() {
                     </div>
                   )}
                 </button>
-                <a href="https://wa.me/919137714543?text=Hi%2C%20I%E2%80%99d%20like%20to%20talk%20about%20HR%20solutions" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-white bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 transition-all shadow-lg">
+                <a href="https://wa.me/917506125291?text=Hi%2C%20I%E2%80%99d%20like%20to%20talk%20about%20HR%20solutions" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-white bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 transition-all shadow-lg">
                   <MessageCircle className="w-5 h-5" /> WhatsApp
                 </a>
               </div>

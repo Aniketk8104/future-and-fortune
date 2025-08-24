@@ -1,0 +1,14 @@
+{
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore",
+  "less.lint.unknownAtRules": "ignore",
+  "css.validate": false,
+  "tailwindCSS.experimental.configFile": "tailwind.config.cjs",
+  "tailwindCSS.includeLanguages": {
+    "html": "html",
+    "astro": "html",
+    "css": "css",
+    "javascript": "javascript",
+    "typescript": "typescriptreact"
+  }
+}
